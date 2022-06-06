@@ -1,0 +1,142 @@
+:root {
+	--rotation: 0deg;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.clock {
+	width: 230px;
+	height: 230px;
+	position: relative;
+	border-radius: 50%;
+
+  &::after {
+	content:'';
+	width: 15px;
+	height: 15px;
+	background: #000;
+	z-index: 20;
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	border-radius: 50%;
+	transform: translate(-50%, 50%);
+  }
+  
+  &::before {
+	content:'';
+	width: 5px;
+	height: 5px;
+	background: #f00;
+	z-index: 22;
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	border-radius: 50%;
+	transform: translate(-50%, 50%);
+  }
+}
+
+
+
+.hands {
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	transform:translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+	transform-origin: bottom;
+  border-radius: 3px 3px 0 0;
+
+  &.seconds {
+	background-color: #f00;
+	height: 38%;
+	width: 2px;
+	z-index: 13;
+  }
+  
+  &.minutes {
+	background-color: #000;
+	height: 35%;
+	width: 4px;
+	z-index: 12;
+  }
+  
+  &.hours {
+	background-color: #000;
+	height: 30%;
+	width: 6px;
+	z-index: 11;
+  }
+}
+
+.numbers {
+  font-size: 1rem;
+	position: absolute;
+  font-weight: 600;
+	top: 0px;
+	left: 50%;
+	transform: translate(-50%) rotate(var(--rotation));
+	height: 50%;
+	transform-origin: bottom;
+	z-index: 10;
+  font-family: 'Exo 2', sans-serif;
+  
+  &::after {
+  font-size: 0.8rem;
+  width: 2px;
+  height: 6px;
+  background-color: #000;
+	position: absolute;
+	top: 22px;
+	left: 50%;
+	transform: translate(-50%);
+	transform-origin: bottom;
+	z-index: 10;
+  }
+  
+  &.number1 { --rotation: 30deg }
+  &.number2 { --rotation: 60deg }
+  &.number3 { --rotation: 90deg }
+  &.number4 { --rotation: 120deg }
+  &.number5 { --rotation: 150deg }
+  &.number6 { --rotation: 180deg }
+  &.number7 { --rotation: 210deg }
+  &.number8 { --rotation: 240deg }
+  &.number9 { --rotation: 270deg }
+  &.number10 { --rotation: 300deg }
+  &.number11 { --rotation: 330deg }
+}
+
+.display-wrapper {
+  margin-top: 30px; 
+}
+
+.current-time {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Exo 2', sans-serif;
+  margin: 0;
+}
+
+.time-display {
+  margin: 0;
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Exo 2', sans-serif;
+}
