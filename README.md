@@ -10,8 +10,7 @@
 
 ## 🔴 Live Demo
 
-👉 **Preview**: https://deft-cannoli-117d01.netlify.app/
-
+👉 **Preview**: https://aquamarine-ganache-42a7bc.netlify.app/
 ## 🖥️ Technologies
 
 - HTML
